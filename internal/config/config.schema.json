@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "challengeFile",
+    "bao",
+    "listenAddr"
+  ],
+  "properties": {
+    "listenAddr": {
+      "type": "string",
+      "description": "The address the SCEP bridge will listen add"
+    },
+    "challengeFile": {
+      "type": "string",
+      "description": "The file that contains the static challenge string"
+    },
+    "bao": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pkiMount",
+        "signRole",
+        "raRole",
+        "raTTL"
+      ],
+      "properties": {
+        "kubernetesRole": {
+          "type": "string",
+          "description": "Role used for Kubernetes SA token based login to OpenBAO. If omitted you must set BAO_TOKEN."
+        },
+        "pkiMount": {
+          "type": "string",
+          "description": "The mount point of the PKI engine the bridge is working with"
+        },
+        "signRole": {
+          "type": "string",
+          "description": "The role used for signing client certificates"
+        },
+        "raRole": {
+          "type": "string",
+          "description": "The role use to generate the bridge's RA certificate"
+        },
+        "raTTL": {
+          "type": "string",
+          "description": "The lifetime of the bridge's RA certificate (Go duration format)"
+        },
+        "raCommonName": {
+          "type": "string",
+          "description": "Common name to use for the RA certificate to issue."
+        },
+        "rootCaCertificate": {
+          "type": "string",
+          "description": "Optionally, a root certificate to serve as part of the CA bundle if OpenBAO does not serve it as part of the CA chain",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

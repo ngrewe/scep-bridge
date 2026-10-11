@@ -1,0 +1,6 @@
+listenAddr: ":8081"
+challengeFile: "/run/secrets/challenge"
+bao:
+  kubernetesRole: "scep-bridge"
+  raRole: "scep-ra"
+  signRole: "wifi"

@@ -1,0 +1,8 @@
+{
+  "listenAddr": ":8080",
+  "bao": {
+    "pkiMount": "pki",
+    "raTTL": "24h",
+    "raCommonName": "scep-bridge"
+  }
+}

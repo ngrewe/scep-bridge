@@ -10,6 +10,11 @@ require (
 	github.com/knadh/koanf/providers/file v1.2.1
 	github.com/knadh/koanf/providers/rawbytes v1.0.1
 	github.com/knadh/koanf/v2 v2.3.7
+	github.com/openbao/openbao/api/auth/kubernetes/v2 v2.7.0
+	github.com/openbao/openbao/api/v2 v2.7.1
+	github.com/smallstep/pkcs7 v0.2.3
+	github.com/smallstep/scep v0.0.0-20260331191114-261f960a40d1
+	go.step.sm/crypto v0.91.0
 )
 
 require (
@@ -32,14 +37,9 @@ require (
 	github.com/mitchellh/copystructure v1.2.0 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/mitchellh/reflectwalk v1.0.2 // indirect
-	github.com/openbao/openbao/api/auth/kubernetes/v2 v2.7.0 // indirect
-	github.com/openbao/openbao/api/v2 v2.7.1 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/ryanuber/go-glob v1.0.0 // indirect
-	github.com/smallstep/pkcs7 v0.2.3 // indirect
-	github.com/smallstep/scep v0.0.0-20260331191114-261f960a40d1 // indirect
 	github.com/yosida95/uritemplate/v3 v3.0.2 // indirect
-	go.step.sm/crypto v0.91.0 // indirect
 	go.yaml.in/yaml/v3 v3.0.5 // indirect
 	golang.org/x/crypto v0.57.0 // indirect
 	golang.org/x/net v0.59.0 // indirect

@@ -1,4 +1,5 @@
-FROM registry.access.redhat.com/hi/go:1.27-builder AS builder
+ARG BUILDER_IMAGE=registry.access.redhat.com/hi/go:1.27-builder
+FROM $BUILDER_IMAGE AS builder
 COPY . /build
 WORKDIR /build
 RUN --mount=type=cache,target=/go/pkg/mod \

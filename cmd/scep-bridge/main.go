@@ -56,10 +56,14 @@ func run(configPath string, logger *slog.Logger) error {
 	var clientSource openbao.ClientSource
 	clientSource, err = openbao.NewStatic()
 	if err != nil {
-		if errors.Is(err, openbao.ErrNoToken) && cfg.Bao.KubernetesRole != "" {
-			clientSource = openbao.NewKubernetes(cfg.Bao.KubernetesRole)
+		if errors.Is(err, openbao.ErrNoToken) {
+			if cfg.Bao.KubernetesRole != "" {
+				clientSource = openbao.NewKubernetes(cfg.Bao.KubernetesRole)
+			} else {
+				return errors.New("no authentication source for OpenBAO found. Either provide a BAO_TOKEN or a Kubernetes role")
+			}
 		} else {
-			return errors.New("no authentication source for OpenBAO found. Either provide a BAO_TOKEN or a Kubernetes role")
+			return err
 		}
 	}
 	logger.Info("selected OpenBAO client source", "clientSource", clientSource)
